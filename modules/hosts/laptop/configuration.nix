@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ inputs, self, moduleWithSystem, ... }:
+{ inputs, self, ... }:
 
 {
   flake.nixosConfigurations.laptop = 
@@ -11,6 +11,7 @@
         boot
         base 
         nix
+        nixs
         user0
         networking
         audio
@@ -27,7 +28,7 @@
         ]);
   };
 
-  flake.nixosModules.laptop-cfg = moduleWithSystem ({ pkgs, upkgs, ... }: 
+  flake.nixosModules.laptop-cfg = { pkgs, upkgs, config, ... }: 
   let 
         modules = with self.nixosModules; [
             wireshark
@@ -93,7 +94,7 @@
     services.flatpak.enable = true;
 
     system.stateVersion = "26.05"; 
-  });
+  };
 }
 
 
