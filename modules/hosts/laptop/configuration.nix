@@ -41,6 +41,8 @@
             zsh
         ];
         packages = with pkgs; [
+             lazygit
+             carapace
              bat
              lsd
              kdePackages.ark

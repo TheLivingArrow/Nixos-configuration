@@ -1,4 +1,6 @@
-# NixOS-Config-files
+NixOS-Config-files
+=====================================================================
+
 Configurations for nixos
 
 The flake root is represented by $NH_FLAKE found in each host configurations
