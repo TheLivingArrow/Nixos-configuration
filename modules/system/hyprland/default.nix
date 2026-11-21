@@ -1,7 +1,7 @@
 { self, inputs,  ... }:
 
 {
-    flake.nixosModules.hyprland = { pkgs, ... }:
+    flake.nixosModules.hyprland = { pkgs, upkgs, ... }:
     {
         imports = with self.nixosModules; [ 
             otter-launcher 
@@ -13,7 +13,12 @@
             extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
         };
 
-        environment.systemPackages = with pkgs; [
+        environment.systemPackages = 
+        (with upkgs; [
+            kitty
+        ]) 
+        ++
+        (with pkgs; [
             brightnessctl
             dunst
             hyprland
@@ -21,11 +26,10 @@
             awww
             hyprshot 
             hyprshutdown
-            kitty
             quickshell
             rofi
             wf-recorder
-        ]; 
+        ]); 
       
         programs.hyprland = {
             enable = true;
