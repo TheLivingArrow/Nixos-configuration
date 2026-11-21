@@ -36,7 +36,6 @@
             rustdesk    
             zsh
             dolphin
-            otter-launcher
             nvf
             zsh
         ];
