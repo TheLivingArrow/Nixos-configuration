@@ -40,6 +40,7 @@
             zsh
         ];
         packages = with pkgs; [
+             fsel # installed in for otter launcher but aint in path so cant run
              lazygit
              carapace
              bat
