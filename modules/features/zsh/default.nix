@@ -32,6 +32,7 @@
                   ls = lib.getExe pkgs.lsd;
                   cat = lib.getExe pkgs.bat;
                   srb = "sh -c $NH_FLAKE/rebuild.sh";
+                  lz = lib.getExe pkgs.lazygit;
                   nvim = lib.getExe self'.packages.nvf;
                   editconf = ''
                       cd $NH_FLAKE

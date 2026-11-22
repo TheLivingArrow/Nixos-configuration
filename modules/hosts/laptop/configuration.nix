@@ -37,7 +37,7 @@
             zsh
             dolphin
             nvf
-            zsh
+            tmux
         ];
         packages = with pkgs; [
              fsel # installed in for otter launcher but aint in path so cant run
@@ -58,7 +58,6 @@
              os-prober
              python3
              quickshell
-             tmux
              vlc
              wine-wayland
              wl-clicker
